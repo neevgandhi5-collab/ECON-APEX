@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Economics Apex Simulator</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Economics Apex Simulator</h1>
+  <p class="subtitle">Strategic markets · Adaptive AI · Real trade-offs</p>
+
+  <!-- GAME MODES -->
+  <div class="tabs">
+    <button class="active" onclick="setMode('pricing', this)">Pricing</button>
+    <button onclick="setMode('competition', this)">Competition</button>
+    <button onclick="setMode('government', this)">Government</button>
+    <button onclick="setMode('central', this)">Central Bank</button>
+    <button onclick="setMode('shock', this)">Shocks</button>
+  </div>
+
+  <!-- CONTROLS -->
+  <div class="panel">
+    <label>Decision Level</label>
+    <input type="range" id="decision" min="5" max="50" value="20">
+
+    <label>Policy / Strategy Level</label>
+    <input type="range" id="policy" min="0" max="30" value="10">
+
+    <button onclick="runRound()">Run Round</button>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div>Round <span id="round">0</span></div>
+    <div>Demand <span id="demand">0</span></div>
+    <div>Your Profit <span id="profit">0</span></div>
+    <div>AI Profit <span id="aiProfit">0</span></div>
+    <div>Score <span id="score">0</span></div>
+  </div>
+
+  <canvas id="chart"></canvas>
+
+  <!-- EXPLANATION -->
+  <div class="panel">
+    <h2>What’s happening?</h2>
+    <p id="explanation">Choose a mode and run a round.</p>
+  </div>
+
+  <!-- ANALYTICS -->
+  <div class="panel">
+    <h2>AI Tutor & Strategy Analysis</h2>
+    <p id="analysis">Waiting for data…</p>
+  </div>
+
+  <div id="end" class="hidden"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
